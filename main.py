@@ -174,7 +174,7 @@ def on_message(ws, message):
 
     preset_id = get_preset_id_from_message(message)
 
-    if preset_id is not None:
+    if preset_id in PRESETS:
         now = time.time()
 
         if now - last_trigger_time < COOLDOWN_SECONDS:
